@@ -1,6 +1,7 @@
 <label>Server Name</label>
 <!-- $server is a resever variable that captures data and info about the event -->
-<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<!-- [()] combines string interpolation and property binding, which results in two-way-binding -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
 <p>{{ serverName }}</p>
 
 <!-- [] indicates property binding, in this case binding to the disabled property the variable -->
