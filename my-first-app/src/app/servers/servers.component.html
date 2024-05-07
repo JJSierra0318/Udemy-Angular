@@ -1,6 +1,12 @@
+<label>Server Name</label>
+<!-- $server is a resever variable that captures data and info about the event -->
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p>{{ serverName }}</p>
+
 <!-- [] indicates property binding, in this case binding to the disabled property the variable -->
-<button class="btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<!-- () indicates event binding, in this case binding the click event -->
+<button class="btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <!--Using property binding instead of string interpolation-->
-<p [innerText]="allowNewServer"></p>
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
