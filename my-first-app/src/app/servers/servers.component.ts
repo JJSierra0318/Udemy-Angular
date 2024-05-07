@@ -7,11 +7,17 @@ import { Component } from '@angular/core';
   //or by class
   //selector: '.app-server'
   //also possible to define inline templates
-  template: `
+  templateUrl: './servers.component.html',
+  /* template: `
   <app-server></app-server>
-  <app-server></app-server>`,
+  <app-server></app-server>`, */
   styleUrl: './servers.component.css'
 })
 export class ServersComponent {
+  allowNewServer = false;
 
+  //method executed when the component is created
+  constructor() {
+    setTimeout(() => this.allowNewServer = true, 2000);
+  }
 }

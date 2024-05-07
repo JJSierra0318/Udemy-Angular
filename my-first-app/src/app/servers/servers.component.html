@@ -1,2 +1,6 @@
+<!-- [] indicates property binding, in this case binding to the disabled property the variable -->
+<button class="btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<!--Using property binding instead of string interpolation-->
+<p [innerText]="allowNewServer"></p>
 <app-server></app-server>
 <app-server></app-server>
