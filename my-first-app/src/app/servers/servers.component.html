@@ -8,6 +8,11 @@
 <!-- () indicates event binding, in this case binding the click event -->
 <button class="btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
 <!--Using property binding instead of string interpolation-->
-<p>{{ serverCreationStatus }}</p>
+<!-- ngIf is a directive, renderes the paragraph conditionally -->
+<p *ngIf="serverCreated; else noServer">{{ serverCreationStatus }}</p>
+<!-- use a local reference for the 'else', and ng-template used to mark places in the dom -->
+<ng-template #noServer>
+    <p>No server has been created!</p>
+</ng-template>
 <app-server></app-server>
 <app-server></app-server>
