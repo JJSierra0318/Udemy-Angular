@@ -6,5 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './server-element.component.css'
 })
 export class ServerElementComponent {
-  @Input() element: {type: string, name: string, content: string};
+  // receive data form other components, also can specify the name of the parameter
+  @Input('serverElement') element: {type: string, name: string, content: string};
 }
