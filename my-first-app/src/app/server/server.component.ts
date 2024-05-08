@@ -6,10 +6,24 @@ import { Component } from "@angular/core";
     //the name of the html selector, usually named app-componentName
     selector: 'app-server',
     //pointer to the html file
-    templateUrl: './server.component.html'
+    templateUrl: './server.component.html',
+    //define style for class online
+    styles: [`
+        .online {
+            color: white;
+        }
+    `]
 })
 //component is a class
 export class ServerComponent {
     serverId = 10;
-    serverStatus = 'offline'
+    serverStatus = 'offline';
+
+    constructor() {
+        this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline'
+    }
+
+    getColor() {
+        return this.serverStatus === 'online' ? 'green' : 'red';
+    }
 }
