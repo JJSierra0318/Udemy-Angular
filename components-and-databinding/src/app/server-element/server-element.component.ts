@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -12,6 +12,7 @@ export class ServerElementComponent implements
   // receive data form other components, also can specify the name of the parameter
   @Input('serverElement') element: { type: string, name: string, content: string };
   @Input() name: string;
+  @ViewChild('header', { static: true }) header: ElementRef;
 
   constructor() {
     console.log('constructor called');
@@ -46,6 +47,8 @@ export class ServerElementComponent implements
 
   ngAfterViewInit() {
     console.log('ngAfterViewInit called');
+    console.log('Text Content: ' + this.header.nativeElement.textContent);
+    
   }
 
   ngAfterViewChecked() {
