@@ -1,3 +1,8 @@
+import { Injectable } from "@angular/core";
+import { LoggingService } from "./logging.service";
+
+// indicate something can be injected, in this case loggingService
+@Injectable()
 export class AccountsService {
   accounts = [
     {
@@ -14,11 +19,15 @@ export class AccountsService {
     }
   ];
 
+  constructor(private loggingService: LoggingService) {}
+
   addAccount(name: string, status: string) {
     this.accounts.push({name, status});
+    this.loggingService.logStatusChange(status);
   }
 
   updatedStatus(id: number, status: string) {
     this.accounts[id].status = status;
+    this.loggingService.logStatusChange(status);
   }
 }
