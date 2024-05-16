@@ -21,6 +21,7 @@ import { LoggingService } from './logging.service';
   ],
   // by providing a service in app module, all components and services will be able to use this service
   // if it is provided in appcomponent, it will be available in all components, but no in services
+  // a better option is to add @Injectable({providedIn: 'root'}) decorator to the service
   providers: [AccountsService, LoggingService],
   bootstrap: [AppComponent]
 })
