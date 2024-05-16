@@ -19,4 +19,9 @@ export class ShoppingListService {
     // this solution keeps sending the copy but informs with an event of the updates made
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients);
+    this.ingredientsChanged.emit(this.ingredients.slice())
+  }
 }
