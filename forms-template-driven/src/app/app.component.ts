@@ -11,6 +11,7 @@ export class AppComponent {
     const suggestedName = 'Superuser';
   }
 
+  // could also be accessed via ViewChild('f') form: NgForm
   onSubmit(form: NgForm) {
     console.log(form);
   }
