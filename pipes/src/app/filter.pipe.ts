@@ -1,7 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  // reruns when data changes
+  pure: false
 })
 export class FilterPipe implements PipeTransform {
 
